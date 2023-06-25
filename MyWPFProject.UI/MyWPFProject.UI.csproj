@@ -106,6 +106,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Dialog\SettingDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Dock\MainDock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -124,6 +128,10 @@
     <Compile Include="Control\ToolBarViewModel.cs" />
     <Compile Include="Converter\BoolToVisibilityConverter.cs" />
     <Compile Include="Converter\EnumToBoolConverter.cs" />
+    <Compile Include="Dialog\SettingDialog.xaml.cs">
+      <DependentUpon>SettingDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\SettingDialogViewModel.cs" />
     <Compile Include="Dock\MainDock.xaml.cs">
       <DependentUpon>MainDock.xaml</DependentUpon>
     </Compile>
@@ -136,15 +144,15 @@
     <Compile Include="Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Menu\MenusModel.cs" />
+    <Compile Include="Model\MenusModel.cs" />
     <Compile Include="Menu\MenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Menu\NavigateItemModel.cs" />
-    <Compile Include="Model\DataModel.cs" />
+    <Compile Include="Model\NavigateItemModel.cs" />
     <Compile Include="Model\DataTypeMeta.cs" />
     <Compile Include="Model\ListBoxData.cs" />
     <Compile Include="Model\ListViewData.cs" />
+    <Compile Include="Model\TabItemModel.cs" />
     <Compile Include="Model\TreeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

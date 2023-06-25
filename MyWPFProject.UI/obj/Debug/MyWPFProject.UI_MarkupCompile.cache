@@ -4,7 +4,7 @@
 library
 C#
 .cs
-D:\Project\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\
 MyWPFProject.UI
 none
 false
@@ -12,9 +12,9 @@ DEBUG;TRACE
 
 4-1519127061
 
-21-110747621
-822070601778
+251073310463
+82-1149491828
 Control\ToolBar.xaml;Dock\MainDock.xaml;Layout\Layout.xaml;Menu\Menu.xaml;
 
-False
+True
 
