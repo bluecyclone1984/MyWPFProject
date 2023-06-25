@@ -1,0 +1,156 @@
+﻿<UserControl x:Class="MyWPFProject.UI.MainDock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MyWPFProject.UI"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:cmd="http://www.galasoft.ch/mvvmlight"
+             xmlns:avalonDock="http://schemas.xceed.com/wpf/xaml/avalondock"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="DataTypeSources" MethodName="GetValues" ObjectType="{x:Type sys:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type Type="local:DataType"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <cmd:EventToCommand Command="{Binding CmdLoaded}" PassEventArgsToCommand="True"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <avalonDock:DockingManager x:Name="dockingManager">
+        <avalonDock:LayoutRoot>
+            <avalonDock:LayoutPanel Orientation="Horizontal">
+                <avalonDock:LayoutAnchorablePaneGroup DockWidth="250" Orientation="Vertical">
+                    <avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorable Title="TreeView" CanClose="False">
+                            <TreeView Margin="5" ItemsSource="{Binding TreeNodeList}">
+                                <TreeView.ItemTemplate>
+                                    <HierarchicalDataTemplate ItemsSource="{Binding ItemList}">
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </HierarchicalDataTemplate>
+                                </TreeView.ItemTemplate>
+                                
+                                <TreeView.ItemContainerStyle>
+                                    <Style TargetType="TreeViewItem">
+                                        <Setter Property="IsExpanded" Value="True"/>
+                                    </Style>
+                                </TreeView.ItemContainerStyle>
+                            </TreeView>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                    <avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorable Title="ListBox" CanClose="False">
+                            <ListBox SelectedValue="{Binding SelectedListBoxValue}" SelectedValuePath="Value" Margin="5" ItemsSource="{Binding ListBoxDataList}">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                    
+
+                </avalonDock:LayoutAnchorablePaneGroup>
+                <avalonDock:LayoutDocumentPaneGroup>
+                    <avalonDock:LayoutDocumentPane>
+                        <avalonDock:LayoutDocument Title="Edit">
+                            <TextBox/>
+                        </avalonDock:LayoutDocument>
+                        <!--<avalonDock:LayoutDocument Title="Doc2">
+                            <TextBox/>
+                        </avalonDock:LayoutDocument>-->
+                    </avalonDock:LayoutDocumentPane>
+                    <!--<avalonDock:LayoutDocumentPane>
+                        <avalonDock:LayoutDocument Title="Doc3">
+                            <TextBox/>
+                        </avalonDock:LayoutDocument>
+                    </avalonDock:LayoutDocumentPane>-->
+                </avalonDock:LayoutDocumentPaneGroup>
+                <avalonDock:LayoutAnchorablePaneGroup DockWidth="250" Orientation="Vertical">
+                    <avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorable Title="ListView" CanClose="False">
+                            <ListView ItemsSource="{Binding ListViewDataList}">
+                                <ListView.ContextMenu>
+                                    <ContextMenu ItemsSource="{Binding ContextMenus}">
+                                        <ContextMenu.Resources>
+                                            <Style TargetType="ContextMenu">
+                                                <Setter Property="FontSize" Value="{Binding Size}"/>
+                                            </Style>
+                                        </ContextMenu.Resources>
+                                        
+                                        <ContextMenu.ItemTemplate>
+                                            <HierarchicalDataTemplate ItemsSource="{Binding ItemList}">
+                                                <TextBlock Text="{Binding Content}"/>
+                                                <!--<MenuItem Header="{Binding Content}"/>-->
+                                            </HierarchicalDataTemplate>
+                                        </ContextMenu.ItemTemplate>
+                                        
+                                        <ContextMenu.ItemContainerStyle>
+                                            <Style TargetType="MenuItem">
+                                                <Setter Property="FontSize" Value="{Binding Size}"></Setter>
+                                                <Setter Property="Command" Value="{Binding NavigateCommand}"></Setter>
+                                                <Setter Property="CommandParameter" Value="{Binding CommandParameter}"></Setter>
+                                            </Style>
+                                        </ContextMenu.ItemContainerStyle>
+                                        
+                                        
+                                    </ContextMenu>
+                                </ListView.ContextMenu>
+                                <ListView.View>
+                                    <GridView>
+                                        <GridViewColumn Width="20" Header="ID" DisplayMemberBinding="{Binding ID}"/>
+                                        <GridViewColumn Width="80" Header="Name" DisplayMemberBinding="{Binding Name}"/>
+                                        <GridViewColumn Width="80" Header="DataType" DisplayMemberBinding="{Binding Data_Type}"/>
+                                        <GridViewColumn Width="50" Header="IsNumber" DisplayMemberBinding="{Binding IsNumber}"/>
+                                    </GridView>
+                                </ListView.View>
+                            </ListView>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                    <avalonDock:LayoutAnchorablePane>
+                        <avalonDock:LayoutAnchorable Title="DataGrid" CanClose="False">
+                            <DataGrid ItemsSource="{Binding ListViewDataList}" AutoGenerateColumns="False" Margin="3">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Binding="{Binding ID}" Header="ID" Width="*"/>
+                                    <DataGridTextColumn Binding="{Binding Name}" Header="Name" Width="*"/>
+                                    <DataGridComboBoxColumn ItemsSource="{Binding Source={StaticResource DataTypeSources}}" SelectedValueBinding="{Binding Data_Type}" Header="DataType" Width="*"/>
+                                    <DataGridCheckBoxColumn Binding="{Binding IsNumber}" Header="IsNumber" Width="*"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorablePane>
+                </avalonDock:LayoutAnchorablePaneGroup>
+            </avalonDock:LayoutPanel>
+            
+            <!--<avalonDock:LayoutRoot.LeftSide>
+                <avalonDock:LayoutAnchorSide>
+                    <avalonDock:LayoutAnchorGroup>
+                        <avalonDock:LayoutAnchorable Title="Project" CanHide="False">
+                            <TextBox/>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorGroup>
+                </avalonDock:LayoutAnchorSide>
+            </avalonDock:LayoutRoot.LeftSide>-->
+            
+            <!--<avalonDock:LayoutRoot.RightSide>
+                <avalonDock:LayoutAnchorSide>
+                    <avalonDock:LayoutAnchorGroup>
+                        <avalonDock:LayoutAnchorable Title="Method" CanHide="False">
+                            <TextBox/>
+                        </avalonDock:LayoutAnchorable>
+                    </avalonDock:LayoutAnchorGroup>
+                </avalonDock:LayoutAnchorSide>
+            </avalonDock:LayoutRoot.RightSide>-->
+        </avalonDock:LayoutRoot>
+    </avalonDock:DockingManager>
+
+</UserControl>
