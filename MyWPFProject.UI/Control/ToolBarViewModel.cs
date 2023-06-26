@@ -124,6 +124,27 @@ namespace MyWPFProject.UI
             }
         }
 
+        /// <summary>
+        /// 数字输入框键盘按键事件
+        /// </summary>
+        public RelayCommand<KeyEventArgs> CmdKeyDown => new Lazy<RelayCommand<KeyEventArgs>>(() => new RelayCommand<KeyEventArgs>(NumKeyDown)).Value;
+        private void NumKeyDown(KeyEventArgs e)
+        {
+            if (((e.Key >= Key.D0 && e.Key <= Key.D9) || (e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9) ||
+               e.Key == Key.Delete || e.Key == Key.Back || e.Key == Key.Left || e.Key == Key.Right || e.Key == Key.Home || e.Key == Key.End)
+              && e.KeyboardDevice.Modifiers == ModifierKeys.None)
+            {
+                e.Handled = false;
+            }
+            else if ((e.Key == Key.Decimal || e.Key == Key.OemPeriod) && e.KeyboardDevice.Modifiers == ModifierKeys.None)
+            {
+                TextBox txt = e.Source as TextBox;
+                if (txt.Text.Contains(".")) e.Handled = true;
+                else e.Handled = false;
+            }
+            else e.Handled = true;
+        }
+
         public RelayCommand<SelectionChangedEventArgs> CmdSelectionChanged => new Lazy<RelayCommand<SelectionChangedEventArgs>>(() => new RelayCommand<SelectionChangedEventArgs>(ComboBox_SelectionChanged)).Value;
         private void ComboBox_SelectionChanged(SelectionChangedEventArgs e)
         {
