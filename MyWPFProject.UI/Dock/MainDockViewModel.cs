@@ -82,6 +82,12 @@ namespace MyWPFProject.UI
             };
         }
 
+        private ObservableCollection<ListViewData> _delListViewDataList = new ObservableCollection<ListViewData>();
+        public ObservableCollection<ListViewData> DelListViewDataList
+        {
+            get => _delListViewDataList;
+            set => Set(ref _delListViewDataList, value);
+        }
 
         private ObservableCollection<ListViewData> _listViewDataList;
         public ObservableCollection<ListViewData> ListViewDataList
@@ -94,12 +100,12 @@ namespace MyWPFProject.UI
             var enumType = typeof(DataType);
             return new ObservableCollection<ListViewData>
             {
-                new ListViewData{ ID=DataType.BOOL.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.BOOL)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.BOOL, IsNumber=false },
-                new ListViewData{ ID=DataType.BYTE.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.BYTE)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.BYTE, IsNumber=false },
-                new ListViewData{ ID=DataType.SINT.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.SINT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.SINT, IsNumber=true },
-                new ListViewData{ ID=DataType.INT.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.INT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.INT, IsNumber=true },
-                new ListViewData{ ID=DataType.DINT.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.DINT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.DINT, IsNumber=true },
-                new ListViewData{ ID=DataType.REAL.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.REAL)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.REAL, IsNumber=true },
+                new ListViewData{ ID=DataType.BOOL.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.BOOL)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.BOOL, IsNumber=false, IsVisible=true },
+                new ListViewData{ ID=DataType.BYTE.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.BYTE)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.BYTE, IsNumber=false, IsVisible=true },
+                new ListViewData{ ID=DataType.SINT.GetHashCode(), Name = (enumType.GetField(Enum.GetName(enumType, DataType.SINT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.SINT, IsNumber=true, IsVisible=true },
+                new ListViewData{ ID=DataType.INT.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.INT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.INT, IsNumber=true, IsVisible=true },
+                new ListViewData{ ID=DataType.DINT.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.DINT)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.DINT, IsNumber=true , IsVisible=true},
+                new ListViewData{ ID=DataType.REAL.GetHashCode(), Name =(enumType.GetField(Enum.GetName(enumType, DataType.REAL)).GetCustomAttribute(typeof(DescriptionAttribute), false) as DescriptionAttribute)?.Description, Data_Type= DataType.REAL, IsNumber=true , IsVisible=true},
             };
         }
 

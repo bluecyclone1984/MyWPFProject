@@ -20,10 +20,15 @@ namespace MyWPFProject.UI
     /// </summary>
     public partial class ToolBar : UserControl
     {
-        public ToolBar()
+        public ToolBar(MainDock mainDock)
         {
             InitializeComponent();
-            DataContext = new ToolBarViewModel();
+            DataContext = new ToolBarViewModel(mainDock);
+        }
+
+        private void CommandBinding_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.Handled = true;
         }
     }
 }

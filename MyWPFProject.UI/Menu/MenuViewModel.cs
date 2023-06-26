@@ -13,6 +13,13 @@ namespace MyWPFProject.UI
 {
     public class MenuViewModel : ViewModelBase
     {
+        private MainDock _mainDockcontent;
+        public MainDock MainDockContent
+        {
+            get => _mainDockcontent;
+            set => Set(ref _mainDockcontent, value);
+        }
+
         // public RelayCommand<string> NavigateCommand => new Lazy<RelayCommand<string>>(() => new RelayCommand<string>(Navigate)).Value;
         private void Navigate(string navigatePath)
         {
@@ -25,8 +32,9 @@ namespace MyWPFProject.UI
             set => Set(ref _menus, value);
         }
 
-        public MenuViewModel()
+        public MenuViewModel(MainDock mainDock)
         {
+            MainDockContent = mainDock;
             Menus = new ObservableCollection<MenusModel>
             {
                 new MenusModel

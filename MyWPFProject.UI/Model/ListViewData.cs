@@ -37,5 +37,12 @@ namespace MyWPFProject.UI
             get => _isNumber;
             set => Set(ref _isNumber, value);
         }
+
+        private bool _isVisible;
+        public bool IsVisible
+        {
+            get => _isVisible;
+            set => Set(ref _isVisible, value);
+        }
     }
 }

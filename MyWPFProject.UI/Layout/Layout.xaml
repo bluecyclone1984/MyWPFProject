@@ -11,11 +11,24 @@
     <Grid>
         <DockPanel>
             <StackPanel DockPanel.Dock="Top" Background="AliceBlue" Height="auto" Orientation="Vertical">
-                <local:Menu></local:Menu>
-                <local:ToolBar></local:ToolBar>
+                <!--<local:Menu></local:Menu>-->
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                </Grid>
+                <StackPanel Grid.Row="0" Grid.Column="0">
+                    <ContentPresenter Content="{Binding MenuContent}" />
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <ContentPresenter Content="{Binding ToolBarContent}" />
+                </StackPanel>
+                <!--<local:ToolBar></local:ToolBar>-->
             </StackPanel>
             <DockPanel>
-                <local:MainDock></local:MainDock>
+                <ContentPresenter Content="{Binding MainDockContent}" />
+                <!--<local:MainDock></local:MainDock>-->
             </DockPanel>
         </DockPanel>
     </Grid>

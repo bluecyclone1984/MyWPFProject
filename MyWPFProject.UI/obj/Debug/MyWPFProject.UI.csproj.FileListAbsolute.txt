@@ -134,3 +134,7 @@ D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Control\ToolBar.baml
 D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\MyWPFProject.UI.csprojAssemblyReference.cache
 D:\Project\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Control\ToolBar.g.cs
 D:\Project\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Control\ToolBar.baml
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Control\TabItemControl1.g.cs
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Dialog\SettingDialog.g.cs
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Control\TabItemControl1.baml
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\Dialog\SettingDialog.baml

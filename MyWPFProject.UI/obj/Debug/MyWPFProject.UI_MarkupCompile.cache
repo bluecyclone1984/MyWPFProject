@@ -4,17 +4,17 @@
 library
 C#
 .cs
-D:\Project\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\
+D:\Projects\ICON\MyWPFProject\MyWPFProject.UI\obj\Debug\
 MyWPFProject.UI
 none
 false
 DEBUG;TRACE
 
-5926483773
+6905120699
 
-272068750726
-822070601778
-Control\ToolBar.xaml;Dialog\SettingDialog.xaml;Dock\MainDock.xaml;Layout\Layout.xaml;Menu\Menu.xaml;
+251601120640
+82-1149491828
+Control\TabItemControl1.xaml;Control\ToolBar.xaml;Dialog\SettingDialog.xaml;Dock\MainDock.xaml;Layout\Layout.xaml;Menu\Menu.xaml;
 
-True
+False
 

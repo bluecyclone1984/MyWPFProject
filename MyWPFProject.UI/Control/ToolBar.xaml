@@ -33,7 +33,14 @@
         <TextBlock Text="文本框" Width="auto" Margin="0 3 0 0" VerticalAlignment="Center"/>
         <TextBox Text="{Binding TextBoxContent}" MinWidth="80" VerticalAlignment="Center" Margin="3 0 0 0"/>
         <TextBlock Text="数字框" Width="auto" Margin="3 3 0 0" VerticalAlignment="Center" />
-        <TextBox Name="TextValue" Text="{Binding TextBoxNumber, StringFormat={}{0:F2}}" MinWidth="80" VerticalAlignment="Center" Margin="3 0 0 0">
+        <TextBox Name="TextValue" Text="{Binding TextBoxNumber}" MinWidth="80" VerticalAlignment="Center" Margin="3 0 0 0"
+                 InputMethod.IsInputMethodEnabled="False">
+            <!--, StringFormat={}{0:F2}}-->
+            <TextBox.CommandBindings>
+                <CommandBinding Command="ApplicationCommands.Paste" CanExecute="CommandBinding_CanExecute"></CommandBinding>
+                <CommandBinding Command="ApplicationCommands.Cut" CanExecute="CommandBinding_CanExecute"></CommandBinding>
+                <CommandBinding Command="ApplicationCommands.Copy" CanExecute="CommandBinding_CanExecute"></CommandBinding>
+            </TextBox.CommandBindings>
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="KeyDown">
                     <cmd:EventToCommand Command="{Binding CmdKeyDown}" PassEventArgsToCommand="True"/>
@@ -57,7 +64,7 @@
         <Button Content="+" Margin="3 3 0 0" VerticalAlignment="Center">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
-                    <cmd:EventToCommand Command="{Binding CmdButtonClick}" PassEventArgsToCommand="True" CommandParameter="111"/>
+                    <cmd:EventToCommand Command="{Binding CmdButtonClick1}" PassEventArgsToCommand="True" CommandParameter="111"/>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>

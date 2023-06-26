@@ -20,10 +20,10 @@ namespace MyWPFProject.UI
     /// </summary>
     public partial class Menu : UserControl
     {
-        public Menu()
+        public Menu(MainDock mainDock)
         {
             InitializeComponent();
-            DataContext = new MenuViewModel();
+            DataContext = new MenuViewModel(mainDock);
         }
     }
 }

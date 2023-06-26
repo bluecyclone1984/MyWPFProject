@@ -17,6 +17,13 @@ namespace MyWPFProject.UI
 {
     public class ToolBarViewModel : ViewModelBase
     {
+        private MainDock _mainDockcontent;
+        public MainDock MainDockContent
+        {
+            get => _mainDockcontent;
+            set => Set(ref _mainDockcontent, value);
+        }
+
         private string _textBoxContent;
         public string TextBoxContent
         {
@@ -96,11 +103,34 @@ namespace MyWPFProject.UI
         {
             MessageBox.Show("Add " + (e.Source as Button)?.Content);
         }
+        public RelayCommand<string> CmdButtonClick1 => new Lazy<RelayCommand<string>>(() => new RelayCommand<string>(ButtonClick1)).Value;
+        private void ButtonClick1(string parameter)
+        {
+            var mdvm = MainDockContent.DataContext as MainDockViewModel;
+            if (mdvm != null)
+            {
+                if (mdvm.ListViewDataList != null && mdvm.DelListViewDataList != null && mdvm.DelListViewDataList.Count > 0)
+                {
+                    mdvm.ListViewDataList.Add(mdvm.DelListViewDataList[0]);
+                    mdvm.DelListViewDataList.RemoveAt(0);
+                }
+            }
+            //MessageBox.Show("Add " + parameter);
+        }
 
         public RelayCommand<string> CmdBtnCommand => new Lazy<RelayCommand<string>>(() => new RelayCommand<string>(BtnCommand)).Value;
         private void BtnCommand(string info)
         {
-            MessageBox.Show("Remove " + info);
+            var mdvm = MainDockContent.DataContext as MainDockViewModel;
+            if (mdvm != null)
+            {
+                if (mdvm.ListViewDataList != null && mdvm.DelListViewDataList != null && mdvm.ListViewDataList.Count > 0)
+                {
+                    mdvm.DelListViewDataList.Add(mdvm.ListViewDataList[0]);
+                    mdvm.ListViewDataList.RemoveAt(0);
+                }
+            }
+            //MessageBox.Show("Remove " + info);
         }
 
         /// <summary>
@@ -151,8 +181,9 @@ namespace MyWPFProject.UI
             MessageBox.Show($"选中{((e.Source as ComboBox)?.SelectedItem as DataTypeMeta)?.Description}");
         }
 
-        public ToolBarViewModel()
+        public ToolBarViewModel(MainDock mainDock)
         {
+            MainDockContent = mainDock;
             InitParams();
         }
 

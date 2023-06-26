@@ -14,6 +14,31 @@ namespace MyWPFProject.UI
     {
         public LayoutViewModel()
         {
+            MainDockContent = new MainDock();
+            MenuContent = new Menu(MainDockContent);
+            ToolBarContent = new ToolBar(MainDockContent);
+            
+        }
+
+        private Menu _menucontent;
+        public Menu MenuContent
+        {
+            get => _menucontent;
+            set => Set(ref _menucontent, value);
+        }
+
+        private ToolBar _toolBarcontent;
+        public ToolBar ToolBarContent
+        {
+            get => _toolBarcontent;
+            set => Set(ref _toolBarcontent, value);
+        }
+
+        private MainDock _mainDockcontent;
+        public MainDock MainDockContent
+        {
+            get => _mainDockcontent;
+            set => Set(ref _mainDockcontent, value);
         }
     }
 }

@@ -47,7 +47,6 @@ D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\GalaSoft.MvvmLight.Plat
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\MyWPFProject.UI.dll
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\System.Windows.Interactivity.dll
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.dll
-D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.Toolkit.dll
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\MyWPFProject.UI.pdb
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\GalaSoft.MvvmLight.pdb
@@ -55,7 +54,6 @@ D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\GalaSoft.MvvmLight.xml
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\GalaSoft.MvvmLight.Platform.xml
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.xml
-D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.xml
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.Toolkit.xml
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
@@ -80,3 +78,5 @@ D:\Projects\ICON\MyWPFProject\MyWPFProject.App\obj\Debug\MyWPFProject.App.csproj
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\obj\Debug\MyWPFProject.App.csproj.CopyComplete
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\obj\Debug\MyWPFProject.App.exe
 D:\Projects\ICON\MyWPFProject\MyWPFProject.App\obj\Debug\MyWPFProject.App.pdb
+D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Projects\ICON\MyWPFProject\MyWPFProject.App\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.xml
