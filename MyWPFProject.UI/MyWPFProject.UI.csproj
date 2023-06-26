@@ -152,6 +152,7 @@
     <Compile Include="Menu\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\NotifyPropertyChangedInstance.cs" />
     <Compile Include="Model\MenusModel.cs" />
     <Compile Include="Menu\MenuViewModel.cs" />
   </ItemGroup>
@@ -160,6 +161,7 @@
     <Compile Include="Model\DataTypeMeta.cs" />
     <Compile Include="Model\ListBoxData.cs" />
     <Compile Include="Model\ListViewData.cs" />
+    <Compile Include="Model\NotifyPropertyChangedBase.cs" />
     <Compile Include="Model\TabItemModel.cs" />
     <Compile Include="Model\TreeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
