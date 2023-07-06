@@ -22,6 +22,7 @@ namespace MyWPFProject.UI
     {
         public Layout()
         {
+            Xceed.Wpf.Toolkit.Licenser.LicenseKey = "WTK45-LWAKK-RB4AN-5AFA";
             InitializeComponent();
             DataContext = new LayoutViewModel();
         }
